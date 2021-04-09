@@ -1,3 +1,4 @@
 #!/bin/sh
-# echo "entrypoint.sh"
-# exec "$@"
+echo "entrypoint.sh"
+python3 manage.py collectstatic
+exec "$@"

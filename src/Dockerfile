@@ -30,4 +30,4 @@ RUN chown -R app:app ${APP_HOME}
 
 USER app
 
-# ENTRYPOINT ["/usr/src/app/entrypoint.sh"]
+ENTRYPOINT ["/usr/src/app/entrypoint.sh"]
