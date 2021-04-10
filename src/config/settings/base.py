@@ -118,7 +118,7 @@ AUTH_USER_MODEL = 'accounts.User'
 
 LANGUAGE_CODE = os.environ.get("LANGUAGE_CODE", "ja")
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Tokyo'
 
 USE_I18N = True
 
