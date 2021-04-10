@@ -2,7 +2,8 @@ from django.shortcuts import render
 
 
 def index(request):
-    return render(request, template_name="index.html")
+    ip = request.META.get('REMOTE_ADDR')
+    return render(request, template_name="index.html", context={"ip": ip})
 
 
 def hello(request):
