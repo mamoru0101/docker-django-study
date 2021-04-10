@@ -28,7 +28,3 @@ if settings.DEBUG:
     urlpatterns += [
         path('__debug__/', include(debug_toolbar.urls)),
     ]
-
-DEBUG_TOOLBAR_CONFIG = {
-    "SHOW_TOOLBAR_CALLBACK": lambda request: True,
-}

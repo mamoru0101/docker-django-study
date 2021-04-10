@@ -7,4 +7,14 @@ INSTALLED_APPS += [
 MIDDLEWARE += [
     'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
-INTERNAL_IPS = ['192.168.80.3']
+
+
+def custom_show_toolbar(request):
+    if request.is_ajax():
+        return False
+    return bool(DEBUG)
+
+
+DEBUG_TOOLBAR_CONFIG = {
+    'SHOW_TOOLBAR_CALLBACK': custom_show_toolbar,
+}
