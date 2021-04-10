@@ -5,6 +5,11 @@ ifdef e
 ENV=${e}
 endif
 
+setservice:
+ifdef service
+SERVICE=${service}
+endif
+
 set-env := export ENV=$(ENV);\
            export COMPOSE_FILE=docker-compose.yml:docker-compose.$(ENV).yml;
 
@@ -25,3 +30,11 @@ up: pre
 down: pre
 	$(set-env) \
 	docker-compose down
+
+downv: pre
+	$(set-env) \
+	docker-compose down -v
+
+enterconsole: setservice
+	$(set-env) \
+	docker-compose exec $(SERVICE) bash
