@@ -1,0 +1,23 @@
+{% load bootstrap4 %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% bootstrap_css %}
+</head>
+<body>
+{% block nav %}
+    {% include "include/navbar.html" %}
+{% endblock %}
+{% block content %}
+    <div>
+        <p>index.html</p>
+        <p><a href="{% url "hello:hello" %}"> go hello </a></p>
+    </div>
+{% endblock %}
+
+{% bootstrap_jquery %}
+{% bootstrap_javascript %}
+</body>
+</html>

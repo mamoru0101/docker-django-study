@@ -1,17 +1,7 @@
-{% load bootstrap4 %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<div>
-    <div>
-        <div style='font-size: 2rem; color: red;'>
-            hello world
-        </div>
+{% extends "index.html" %}
+
+{% block content %}
+    <div class="h1 text-danger">
+        hello world
     </div>
-</div>
-</body>
-</html>
+{% endblock %}
