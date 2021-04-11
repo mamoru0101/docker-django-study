@@ -42,6 +42,7 @@ THIRD_PARTY = [
 
 INSTALLED_APPS = BUILDIN_APPS + MY_APPS + THIRD_PARTY
 
+TRIAL_MODE = int(os.environ.get("TRIAL_MODE", 0))
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -65,6 +66,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'config.context_processors.trial_mode'
             ],
         },
     },

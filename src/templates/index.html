@@ -17,7 +17,33 @@
         <p><a href="{% url "hello:hello" %}"> go hello </a></p>
     </div>
 {% endblock %}
+{% if TRIALMODE %}
+    <style>
+        .trial-text {
+            position: absolute;
+            display: inline-block;
+            white-space: nowrap;
+            font-size: 40pt;
+            line-height: 1;
+            font-weight: bold;
+            color: rgba(0, 0, 255, 0.4);
+            top: 90%;
+            left: 100%;
+            transform: translate(-100%, 0%);
+            animation: flickerAnime 3s linear infinite alternate;
+        }
 
+        @keyframes flickerAnime {
+            0% {
+                color: rgba(0, 0, 255, 0)
+            }
+            100% {
+                color: rgba(0, 0, 255, 0.4)
+            }
+        }
+    </style>
+    <div class="trial-text">{{ trial_text }}</div>
+{% endif %}
 {% bootstrap_jquery %}
 {% bootstrap_javascript %}
 </body>
