@@ -1,4 +1,4 @@
-ENV=develop
+ENV=dev
 
 pre:
 ifdef e
@@ -11,7 +11,7 @@ SERVICE=${service}
 endif
 
 set-env := export ENV=$(ENV);\
-           export COMPOSE_FILE=docker-compose.yml:docker-compose.$(ENV).yml;
+           export COMPOSE_FILE=docker-compose.yml:./dc/$(ENV).yml;
 
 
 buildup: pre
