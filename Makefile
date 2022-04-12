@@ -27,6 +27,9 @@ up: pre
 	$(set-env) \
 	docker-compose up -d
 
+upnotd: pre
+	$(set-env) \
+	docker-compose up
 
 down: pre
 	$(set-env) \
